@@ -19,6 +19,26 @@
       margin-top: 1rem;
       font-size: 0.9rem;
     }
+    .contact-error {
+      display: none;
+      padding: 1rem;
+      background: #fce8e8;
+      border: 1px solid #e0a0a0;
+      color: #8b2a2a;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    .contact-honey {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
   </style>
 </head>
 <body>
@@ -77,11 +97,11 @@
           </p>
         </div>
 
-        <!-- Contact form -->
+        <!-- Contact form: submissions via FormSubmit (static-site friendly) → esraozgunca@gmail.com -->
         <div>
-          <!-- Replace YOUR_FORMSPREE_ID with your Formspree form ID from formspree.io -->
-          <!-- e.g. action="https://formspree.io/f/xyzabcde" -->
-          <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" novalidate>
+          <form id="contact-form" action="#" method="post" novalidate>
+            <!-- Honeypot — leave hidden; FormSubmit drops spam submissions that fill this -->
+            <input type="text" name="_honey" class="contact-honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <input
               type="text"
               name="name"
@@ -106,9 +126,12 @@
               placeholder="Type your message here…"
               required
             ></textarea>
-            <button type="submit" class="btn">Send</button>
-            <div class="contact-success" id="contact-success">
+            <button type="submit" class="btn" id="contact-submit">Send</button>
+            <div class="contact-success" id="contact-success" role="status">
               Thank you! Your message has been sent.
+            </div>
+            <div class="contact-error" id="contact-error" role="alert">
+              Something went wrong. Please try again or email esraozgunca@gmail.com directly.
             </div>
           </form>
         </div>
@@ -123,19 +146,79 @@
   </footer>
 
   <script>
-    document.getElementById('contact-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      /* Basic client-side validation */
-      var email = this.querySelector('[name="email"]').value.trim();
-      var message = this.querySelector('[name="message"]').value.trim();
-      if (!email || !message) {
-        alert('Please fill in your email and message.');
-        return;
-      }
-      /* Show success (wire up to a real backend / Cloudflare Worker / Formspree later) */
-      document.getElementById('contact-success').style.display = 'block';
-      this.reset();
-    });
+    (function () {
+      var form = document.getElementById('contact-form');
+      var successEl = document.getElementById('contact-success');
+      var errorEl = document.getElementById('contact-error');
+      var submitBtn = document.getElementById('contact-submit');
+      var endpoint = 'https://formsubmit.co/ajax/esraozgunca@gmail.com';
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        successEl.style.display = 'none';
+        errorEl.style.display = 'none';
+
+        var name = form.querySelector('[name="name"]').value.trim();
+        var email = form.querySelector('[name="email"]').value.trim();
+        var subject = form.querySelector('[name="subject"]').value.trim();
+        var message = form.querySelector('[name="message"]').value.trim();
+        var honey = form.querySelector('[name="_honey"]').value;
+
+        if (!email || !message) {
+          alert('Please fill in your email and message.');
+          return;
+        }
+        if (honey) {
+          return;
+        }
+
+        var payload = {
+          name: name,
+          email: email,
+          _replyto: email,
+          subject: subject || '(no subject)',
+          message: message,
+          _subject: 'Website contact: ' + (subject || 'esraozgun.ca'),
+        };
+
+        submitBtn.disabled = true;
+        var prevLabel = submitBtn.textContent;
+        submitBtn.textContent = 'Sending…';
+
+        var ctrl = new AbortController();
+        var t = setTimeout(function () {
+          ctrl.abort();
+        }, 25000);
+
+        fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify(payload),
+          signal: ctrl.signal,
+        })
+          .then(function (res) {
+            if (!res.ok) throw new Error('Bad response');
+            return res.json();
+          })
+          .then(function (data) {
+            var ok = data && (data.success === true || data.success === 'true');
+            if (!ok) throw new Error('Not accepted');
+            successEl.style.display = 'block';
+            form.reset();
+          })
+          .catch(function () {
+            errorEl.style.display = 'block';
+          })
+          .finally(function () {
+            clearTimeout(t);
+            submitBtn.disabled = false;
+            submitBtn.textContent = prevLabel;
+          });
+      });
+    })();
   </script>
 
 </body>
