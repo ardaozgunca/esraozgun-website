@@ -1,2 +1,11 @@
 .DS_Store
 **/.DS_Store
+
+# Local duplicate of repo root (edit files at project root for GitHub)
+site/
+
+# Working/source assets not published as the static site
+website/
+
+# Ad-hoc screenshots at repo root
+Screenshot*.png
