@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Esra Gomceli Ozgun</title>
+  <meta name="description" content="Contact Esra Gomceli Ozgun — botanical artist and instructor based in Ottawa, ON." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .contact-success {
+      display: none;
+      padding: 1rem;
+      background: #e8f4e8;
+      border: 1px solid #b0d8b0;
+      color: #2a6e2a;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <a href="index.html" class="site-title">Esra Gomceli Ozgun</a>
+    <p class="site-subtitle">the logbook for a botanical, architectural, theoretical, philosophical journey</p>
+
+    <div class="header-social">
+      <a href="contact.html" class="social-icon mail" aria-label="Email">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/>
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="social-icon instagram" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#444"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="site-nav">
+    <a href="works.html">Botanical Art</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+    <div class="container">
+      <section class="contact-section">
+
+        <!-- Contact info -->
+        <div class="contact-info">
+          <h2>Get in Touch</h2>
+          <p>Have a question about classes, commissions, or botanical art? I'd love to hear from you.</p>
+
+          <p>
+            <strong>Ottawa, ON, Canada</strong><br />
+            Teaching at the <a href="https://ottawaschoolofart.ca/" target="_blank" rel="noopener">Ottawa School of Art</a><br />
+            Downtown &amp; Orléans campuses
+          </p>
+
+          <p>
+            <strong>OSBA Member</strong><br />
+            <a href="https://osba.ca/" target="_blank" rel="noopener">Ottawa Society of Botanical Artists</a>
+          </p>
+
+          <p style="margin-top:1.5rem;">
+            <strong>Follow on Instagram</strong><br />
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener">@esragomceliozgun</a>
+          </p>
+        </div>
+
+        <!-- Contact form -->
+        <div>
+          <!-- Replace YOUR_FORMSPREE_ID with your Formspree form ID from formspree.io -->
+          <!-- e.g. action="https://formspree.io/f/xyzabcde" -->
+          <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" novalidate>
+            <input
+              type="text"
+              name="name"
+              placeholder="First Name"
+              required
+              autocomplete="given-name"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email *"
+              required
+              autocomplete="email"
+            />
+            <input
+              type="text"
+              name="subject"
+              placeholder="Subject"
+            />
+            <textarea
+              name="message"
+              placeholder="Type your message here…"
+              required
+            ></textarea>
+            <button type="submit" class="btn">Send</button>
+            <div class="contact-success" id="contact-success">
+              Thank you! Your message has been sent.
+            </div>
+          </form>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <p>© 2025 by Esra Gomceli Ozgun</p>
+  </footer>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      /* Basic client-side validation */
+      var email = this.querySelector('[name="email"]').value.trim();
+      var message = this.querySelector('[name="message"]').value.trim();
+      if (!email || !message) {
+        alert('Please fill in your email and message.');
+        return;
+      }
+      /* Show success (wire up to a real backend / Cloudflare Worker / Formspree later) */
+      document.getElementById('contact-success').style.display = 'block';
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>

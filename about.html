@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me | Esra Gomceli Ozgun</title>
+  <meta name="description" content="Esra Gomceli Ozgun — Botanical Artist and Instructor, Ottawa. Background in architecture. Member of OSBA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <a href="index.html" class="site-title">Esra Gomceli Ozgun</a>
+    <p class="site-subtitle">the logbook for a botanical, architectural, theoretical, philosophical journey</p>
+
+    <div class="header-social">
+      <a href="contact.html" class="social-icon mail" aria-label="Email">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/>
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="social-icon instagram" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#444"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="site-nav">
+    <a href="works.html">Botanical Art</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+    <div class="container">
+
+      <!-- Bio section -->
+      <section class="about-bio">
+        <div class="about-bio-text">
+          <p>Esra is a Botanical Artist and Instructor with a background in architecture and a deep
+            appreciation for the natural world. Originally from Turkey, she spent over 25 years
+            practicing architecture in Istanbul, where she also nurtured a lifelong love of drawing
+            and painting.</p>
+
+          <p>Over time, her creative focus shifted toward botanical art — a discipline that beautifully
+            unites her interest in structure, aesthetics, and the quiet precision of nature.</p>
+
+          <p>Her artistic practice is rooted in a desire to capture the harmony of natural forms through
+            the delicate, layered techniques of watercolour. She enjoys the balance between observation
+            and craftsmanship that botanical art demands — and brings that same balance to her
+            instruction.</p>
+
+          <p>She is a member of the Ottawa Society of Botanical Artists (OSBA) and has exhibited her
+            work at the Plant Portraits Exhibition and the Botanical Art Shows.</p>
+
+          <p>She currently teaches botanical watercolour techniques at the Ottawa School of Art, at
+            both the Downtown and Orléans campuses. Above all, she finds joy in sharing her passion
+            for plants, drawing, and quiet observation with fellow artists.</p>
+        </div>
+        <img
+          src="images/about/esra-profile.jpeg"
+          alt="Esra Gomceli Ozgun"
+          class="about-bio-photo"
+        />
+      </section>
+
+      <!-- ART gallery -->
+      <section class="about-gallery-section">
+        <h2 class="about-gallery-title">Art</h2>
+        <div class="about-gallery-grid" id="art-gallery">
+          <img src="images/works/paint/magnolia.jpg"          alt="Magnolia"          data-gallery="art" />
+          <img src="images/works/paint/cedar.jpg"             alt="Cedar"             data-gallery="art" />
+          <img src="images/works/paint/birds-nest-fern.jpg"   alt="Birds nest fern"   data-gallery="art" />
+          <img src="images/works/paint/red-pine.jpg"          alt="Red Pine"          data-gallery="art" />
+          <img src="images/works/paint/orchid.jpg"            alt="Orchid"            data-gallery="art" />
+          <img src="images/works/paint/work1.jpg"             alt="Botanical work"    data-gallery="art" />
+          <img src="images/works/paint/work2.jpg"             alt="Botanical work"    data-gallery="art" />
+          <img src="images/works/paint/work3.jpg"             alt="Botanical work"    data-gallery="art" />
+          <img src="images/works/paint/work4.jpg"             alt="Botanical work"    data-gallery="art" />
+        </div>
+      </section>
+
+      <!-- ARCHITECTURE gallery -->
+      <section class="about-gallery-section">
+        <h2 class="about-gallery-title">Architecture</h2>
+        <div class="about-gallery-grid" id="arch-gallery">
+          <img src="images/arch/vasarely.jpg"   alt="Vasarely Exhibition"  data-gallery="arch" />
+          <img src="images/arch/mansion1.jpg"   alt="Con Pasha Mansion"    data-gallery="arch" />
+          <img src="images/arch/building2.jpg"  alt="Dragos Mansion"       data-gallery="arch" />
+          <img src="images/arch/modern.png"     alt="Modern project"       data-gallery="arch" />
+          <img src="images/arch/exterior1.jpg"  alt="Architectural exterior" data-gallery="arch" />
+          <img src="images/arch/exterior2.jpg"  alt="Architectural exterior" data-gallery="arch" />
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <p>© 2025 by Esra Gomceli Ozgun</p>
+  </footer>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-close" id="lb-close" aria-label="Close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lb-prev" aria-label="Previous">&#8249;</button>
+    <div class="lightbox-inner">
+      <img src="" alt="" id="lb-img" />
+    </div>
+    <button class="lightbox-nav lightbox-next" id="lb-next" aria-label="Next">&#8250;</button>
+  </div>
+
+  <script>
+    (function () {
+      var currentIdx = 0;
+      var currentSet = [];
+
+      function openLightbox(imgs, idx) {
+        currentSet = imgs;
+        currentIdx = idx;
+        showImage();
+        document.getElementById('lightbox').classList.add('open');
+      }
+
+      function showImage() {
+        var img = currentSet[currentIdx];
+        document.getElementById('lb-img').src = img.src;
+        document.getElementById('lb-img').alt = img.alt;
+      }
+
+      document.querySelectorAll('.about-gallery-grid img').forEach(function (img) {
+        img.addEventListener('click', function () {
+          var gallery = img.dataset.gallery;
+          var imgs = Array.from(document.querySelectorAll('[data-gallery="' + gallery + '"]'));
+          var idx = imgs.indexOf(img);
+          openLightbox(imgs, idx);
+        });
+      });
+
+      document.getElementById('lb-close').addEventListener('click', function () {
+        document.getElementById('lightbox').classList.remove('open');
+      });
+
+      document.getElementById('lb-prev').addEventListener('click', function () {
+        currentIdx = (currentIdx - 1 + currentSet.length) % currentSet.length;
+        showImage();
+      });
+
+      document.getElementById('lb-next').addEventListener('click', function () {
+        currentIdx = (currentIdx + 1) % currentSet.length;
+        showImage();
+      });
+
+      document.getElementById('lightbox').addEventListener('click', function (e) {
+        if (e.target === this) this.classList.remove('open');
+      });
+
+      document.addEventListener('keydown', function (e) {
+        var lb = document.getElementById('lightbox');
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') lb.classList.remove('open');
+        if (e.key === 'ArrowLeft') { currentIdx = (currentIdx - 1 + currentSet.length) % currentSet.length; showImage(); }
+        if (e.key === 'ArrowRight') { currentIdx = (currentIdx + 1) % currentSet.length; showImage(); }
+      });
+    })();
+  </script>
+
+</body>
+</html>

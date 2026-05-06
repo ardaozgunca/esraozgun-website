@@ -1,0 +1,1030 @@
+/* ===================================================
+   Esra Gomceli Ozgun — Main Stylesheet
+   =================================================== */
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: #222;
+  background: #fff;
+  line-height: 1.7;
+}
+
+img { max-width: 100%; display: block; }
+a  { color: inherit; text-decoration: none; }
+
+/* ---------- Typography ---------- */
+.site-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #1a1a1a;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.site-subtitle {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: #444;
+  margin-top: 0.3rem;
+}
+
+.section-title {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+.quote {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: #333;
+  max-width: 680px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  position: relative;
+  text-align: center;
+  padding: 2rem 2rem 0.5rem;
+}
+
+.header-social {
+  position: absolute;
+  right: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.social-icon:hover { opacity: 0.7; }
+
+.social-icon.mail {
+  background: #2c4a6e;
+  color: #fff;
+}
+
+.social-icon.instagram {
+  color: #444;
+  font-size: 1.25rem;
+}
+
+/* ---------- Navigation ---------- */
+.site-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 1rem 0 0.5rem;
+  border-bottom: none;
+}
+
+.site-nav a {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: none;
+  color: #222;
+  padding-bottom: 2px;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.site-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0; right: 0;
+  height: 1px;
+  background: #222;
+  transform: scaleX(0);
+  transition: transform 0.2s;
+}
+
+.site-nav a:hover::after,
+.site-nav a.active::after { transform: scaleX(1); }
+.site-nav a.active { font-weight: 600; }
+
+/* ---------- Main Layout ---------- */
+main { min-height: 60vh; }
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.container-wide {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ---------- Home Page (index.html) ---------- */
+body.home-page {
+  background: #fff;
+}
+
+.home-header .home-brand {
+  text-align: center;
+}
+
+/* Thinner script name + rule line (reference layout) */
+.site-title--home {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #1a1a1a;
+  text-decoration: none;
+  border-bottom: 1px solid #1a1a1a;
+  display: inline-block;
+  padding-bottom: 0.35rem;
+  margin-bottom: 0;
+}
+
+.home-logbook {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  margin: 0.85rem 0 0;
+}
+
+.home-journey {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #555;
+  margin: 0.35rem 0 0;
+  text-transform: lowercase;
+}
+
+/* Main nav — serif (reference) */
+.site-nav--home {
+  padding-top: 0.75rem;
+  padding-bottom: 0.25rem;
+}
+
+.site-nav--home a {
+  font-family: 'Lora', Georgia, 'Times New Roman', serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+
+.home-main {
+  min-height: 50vh;
+  padding: 0 0 2.5rem;
+}
+
+.home-circles--landing {
+  padding: 2rem 1rem 1.5rem;
+  gap: clamp(2rem, 8vw, 4rem);
+}
+
+.home-circle-label--serif {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  color: #1a1a1a;
+}
+
+/*
+ * Body copy width tuned so the intro wraps like:
+ * Line 1: … botanical illustration.
+ * Line 2: She offers beginner and intermediate …
+ * (~120ch fits the first sentence on one line at typical body size)
+ */
+.home-column {
+  max-width: min(120ch, calc(100vw - 2rem));
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: left;
+}
+
+.home-intro {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #222;
+  margin: 0 0 2rem;
+  max-width: 100%;
+}
+
+/*
+ * Buttercup: true horizontal center (flex), never cropped.
+ * Global `img { display: block }` breaks text-align:center + inline-block in some cases.
+ */
+.home-figure.home-figure--wide {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 2rem;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home-hero-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.home-figure {
+  margin: 0 0 2rem;
+  padding: 0;
+  text-align: center;
+}
+
+body.home-page .home-figure--wide .home-hero-img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(1100px, calc(100vw - 2rem));
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.home-hero-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.home-quote {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #222;
+  margin: 0;
+  padding-bottom: 1rem;
+}
+
+.home-quote-attrib {
+  display: block;
+  margin-top: 0.75rem;
+}
+
+.home-quote a {
+  color: #2c4a6e;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Footer: copyright centered, social bottom-right (home) */
+.site-footer--home {
+  position: relative;
+  text-align: center;
+  padding: 2rem 1.5rem 3.5rem;
+  margin-top: 0;
+}
+
+.home-footer-social {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Shared circle row (also used on home) */
+.home-circles {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  padding: 3rem 1rem 2rem;
+}
+
+.home-circle-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s;
+}
+
+.home-circle-item:hover { opacity: 0.85; }
+
+.home-circle-item img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e0e0e0;
+}
+
+.home-circle-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: #333;
+}
+
+.home-quote-section {
+  padding: 1.5rem 2rem 2rem;
+  text-align: center;
+}
+
+.home-quote-section p {
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: #333;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ---------- About Page ---------- */
+.about-bio {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 3rem;
+  padding: 3rem 0;
+  align-items: start;
+}
+
+.about-bio p {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: #2a2a2a;
+  margin-bottom: 1rem;
+}
+
+.about-bio-photo {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+/* About — gallery sections */
+.about-gallery-section {
+  padding: 2.5rem 0;
+  border-top: 1px solid #e8e8e8;
+}
+
+.about-gallery-title {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+.about-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.5rem;
+}
+
+.about-gallery-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.about-gallery-grid img:hover { opacity: 0.88; }
+
+/* ---------- Works / Botanical Art Page ---------- */
+.works-hero {
+  text-align: center;
+  padding: 2.5rem 1rem 1rem;
+}
+
+.works-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+
+.works-card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  text-align: center;
+  text-decoration: none;
+  color: #222;
+  transition: box-shadow 0.2s;
+  display: block;
+}
+
+.works-card:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.1); }
+
+.works-card-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.works-card-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 1.2rem 1rem;
+  color: #2c4a6e;
+}
+
+.works-quote {
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+  font-size: 0.92rem;
+  letter-spacing: 0.05em;
+  color: #444;
+  text-transform: uppercase;
+}
+
+/* Works sub-gallery page */
+.gallery-page-header {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem;
+}
+
+.gallery-page-header h1 {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.gallery-back {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: #666;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.gallery-back:hover { color: #222; }
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.75rem;
+  padding: 1rem 0 3rem;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.photo-grid img:hover { opacity: 0.88; }
+
+/* ---------- Teaching Page ---------- */
+.teaching-intro {
+  text-align: center;
+  padding: 2.5rem 1rem 2rem;
+}
+
+.teaching-intro h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.teaching-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 1rem 0 2.5rem;
+}
+
+.teaching-card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  text-align: center;
+  color: #222;
+  display: block;
+  text-decoration: none;
+  transition: box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.teaching-card:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.1); }
+
+.teaching-card-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.teaching-card-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 1.2rem 1rem;
+  color: #2c4a6e;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Teaching — testimonials */
+.testimonials-header {
+  text-align: center;
+  border-top: 2px solid #2c4a6e;
+  padding-top: 0.5rem;
+  margin: 1rem 0 0;
+}
+
+.testimonials-header h2 {
+  font-size: 0.78rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline;
+}
+
+.testimonials-header span {
+  color: #2c4a6e;
+  font-size: 1rem;
+}
+
+/* Teaching course section */
+.course-section {
+  padding: 3rem 0;
+  border-top: 1px solid #e8e8e8;
+}
+
+.course-section:first-child { border-top: none; }
+
+.course-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.course-layout.reverse .course-text { order: 2; }
+.course-layout.reverse > *:not(.course-text) { order: 1; }
+
+.course-title {
+  font-size: 0.88rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.course-text p {
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: #333;
+  margin-bottom: 0.8rem;
+}
+
+.course-img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Teaching quote box */
+.quote-box {
+  background: #f7f5f0;
+  padding: 3rem 2.5rem;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.quote-box blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.quote-box cite {
+  display: block;
+  font-style: normal;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  color: #555;
+  font-weight: 400;
+}
+
+.testimonials-section {
+  background: #f0ede4;
+  padding: 3rem 2rem;
+  margin-top: 3rem;
+}
+
+.testimonials-section h2 {
+  font-size: 1rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #1a1a1a;
+}
+
+.testimonial {
+  margin-bottom: 2rem;
+}
+
+.testimonial p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: #2a2a2a;
+  margin-bottom: 0.2rem;
+}
+
+.testimonial cite {
+  font-size: 0.82rem;
+  font-style: normal;
+  color: #555;
+  font-weight: 600;
+}
+
+/* ---------- Blog Page ---------- */
+.blog-header {
+  padding: 2.5rem 1rem 1.5rem;
+  border-bottom: 1px solid #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.blog-header h1 {
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #333;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 2rem 0 3rem;
+}
+
+.blog-card {
+  border: 1px solid #e8e8e8;
+  background: #fff;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+  cursor: pointer;
+}
+
+/* Blog cards as links */
+a.blog-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.blog-card:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.1); }
+
+/* ----- Blog post (detail) page ----- */
+.blog-post-back {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.blog-post-back:hover { color: #222; }
+
+.blog-post-header {
+  padding: 2rem 0 0.5rem;
+}
+
+.blog-post-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+
+.blog-post-meta {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.blog-post-featured {
+  width: 100%;
+  max-height: 460px;
+  object-fit: cover;
+  margin: 1.5rem 0;
+  border: 1px solid #e8e8e8;
+}
+
+.blog-post-body {
+  max-width: 680px;
+  padding-bottom: 3rem;
+}
+
+.blog-post-body p {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.blog-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-card-body {
+  padding: 1rem;
+}
+
+.blog-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.blog-card-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #2c4a6e;
+  color: #fff;
+  font-size: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.blog-card h2 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.4rem;
+  color: #1a1a1a;
+}
+
+.blog-card p {
+  font-size: 0.83rem;
+  color: #555;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blog-card-footer {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  border-top: 1px solid #f0f0f0;
+  font-size: 0.75rem;
+  color: #888;
+  gap: 1rem;
+}
+
+/* ---------- Contact Page ---------- */
+.contact-section {
+  padding: 3rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contact-info h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.contact-info a {
+  color: #2c4a6e;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  color: #222;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+form input:focus,
+form textarea:focus { border-color: #2c4a6e; }
+
+form textarea { min-height: 140px; resize: vertical; }
+
+.btn {
+  display: inline-block;
+  padding: 0.65rem 2rem;
+  background: #2c4a6e;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  align-self: flex-start;
+}
+
+.btn:hover { background: #1a3251; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.78rem;
+  color: #888;
+  border-top: 1px solid #e8e8e8;
+  margin-top: 2rem;
+}
+
+/* ---------- Lightbox ---------- */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-overlay.open { display: flex; }
+
+.lightbox-inner {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.lightbox-inner img {
+  max-width: 90vw;
+  max-height: 88vh;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  z-index: 1001;
+  background: none;
+  border: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.lightbox-close:hover { opacity: 1; }
+
+.lightbox-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  opacity: 0.7;
+  padding: 0.5rem 1rem;
+  transition: opacity 0.2s;
+  z-index: 1001;
+}
+
+.lightbox-nav:hover { opacity: 1; }
+.lightbox-prev { left: 1rem; }
+.lightbox-next { right: 1rem; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .header-social { position: static; transform: none; flex-direction: row; justify-content: center; padding: 0.5rem; }
+  .site-header { padding-bottom: 0; }
+
+  .site-nav { gap: 1.2rem; flex-wrap: wrap; padding: 0.7rem 0.5rem; }
+
+  .home-circles { gap: 1.5rem; }
+  .home-circle-item img { width: 100px; height: 100px; }
+
+  .about-bio { grid-template-columns: 1fr; }
+  .about-bio-photo { max-width: 260px; margin: 0 auto; }
+
+  .works-cards,
+  .teaching-cards,
+  .blog-grid { grid-template-columns: 1fr; }
+
+  .course-layout,
+  .course-layout.reverse { grid-template-columns: 1fr; }
+  .course-layout.reverse .course-text { order: unset; }
+  .course-layout.reverse > *:not(.course-text) { order: unset; }
+
+  .quote-box { grid-template-columns: 1fr; }
+
+  .contact-section { grid-template-columns: 1fr; gap: 2rem; }
+
+  .photo-grid { grid-template-columns: repeat(2, 1fr); }
+  .photo-grid img { height: 200px; }
+
+  .about-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-gallery-grid img { height: 180px; }
+}
+
+@media (max-width: 480px) {
+  .site-title { font-size: 1.9rem; }
+  .site-nav { gap: 0.8rem; font-size: 0.82rem; }
+  .home-circles { flex-wrap: wrap; }
+  .photo-grid { grid-template-columns: 1fr; }
+
+  .site-footer--home .home-footer-social {
+    position: static;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
